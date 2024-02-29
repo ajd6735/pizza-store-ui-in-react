@@ -1,17 +1,30 @@
-
-const Pizza = () => {
+const Pizza = (props: {
+  photoName: string;
+  name: string;
+  ingredients: string;
+  price: number;
+}) => {
   return (
+    <div>
+      <img src={props.photoName} alt="spinach pizza" />
+      <h3>{props.name}</h3>
+      <p>{props.ingredients}</p>
+      <span>${props.price}</span>
+      <br />
       <div>
-          <img src='../public/pizza_images/spinaci.jpg' alt='spinach pizza'/>
-          <h2>Pizza</h2>
-          <p>Tomato, mozarella, spinach.</p>
-          <br />
-          <div>
-            <button style={{color: 'white', backgroundColor: 'blue', width: '140px', height: '80px'}}>Order Now</button>
-            </div>
+        <button
+          style={{
+            color: "white",
+            backgroundColor: "blue",
+            width: "140px",
+            height: "80px",
+          }}
+        >
+          Order Now
+        </button>
+      </div>
     </div>
-    
-  )
-}
+  );
+};
 
-export default Pizza
+export default Pizza;

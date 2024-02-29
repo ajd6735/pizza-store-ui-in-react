@@ -1,3 +1,5 @@
+import './index.css'; 
+
 const pizzaData = [
   {
     name: "Focaccia",
@@ -42,3 +44,4 @@ const pizzaData = [
     soldOut: false,
   },
 ];
+export default pizzaData;

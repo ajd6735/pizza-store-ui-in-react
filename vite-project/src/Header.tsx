@@ -1,8 +1,12 @@
-
 const Header = () => {
+  const headerStyles = {
+    fontSize: "48px",
+    padding: "2px",
+  };
   return (
-    <h1>Fast React Pizza Co.</h1>
-  )
-}
-
-export default Header;
+    <header className="header">
+      <h1 style={headerStyles}>FAST REACT PIZZA CO.</h1>
+    </header>
+  );
+};
+export default Header  
