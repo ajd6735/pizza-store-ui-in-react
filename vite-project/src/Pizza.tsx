@@ -1,27 +1,16 @@
-const Pizza = (props: {
-  photoName: string;
-  name: string;
-  ingredients: string;
-  price: number;
-}) => {
+
+
+const Pizza = ({pizzaObj}) => {
+
   return (
-    <div>
-      <img src={props.photoName} alt="spinach pizza" />
-      <h3>{props.name}</h3>
-      <p>{props.ingredients}</p>
-      <span>${props.price}</span>
+    <div className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
+      <img src={pizzaObj.photoName} alt="spinach pizza" />
+      <h3>{pizzaObj.name}</h3>
+      <p>{pizzaObj.ingredients}</p>
+      <span>{pizzaObj.soldOut ? 'SOLD OUT ' : pizzaObj.price}</span>
+      <span>{ pizzaObj.soldOut}</span>
       <br />
       <div>
-        <button
-          style={{
-            color: "white",
-            backgroundColor: "blue",
-            width: "140px",
-            height: "80px",
-          }}
-        >
-          Order Now
-        </button>
       </div>
     </div>
   );

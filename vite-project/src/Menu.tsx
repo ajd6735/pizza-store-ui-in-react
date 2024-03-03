@@ -1,10 +1,26 @@
-import Pizza from './Pizza'
+import Pizza from './Pizza';
+import pizzaData from './data';
+import '../public/pizza_images/focaccia.jpg';
 
 export const Menu = () => {
+  const pizzas = pizzaData;
+  const numPizzas = pizzas.length;
   return (
-      <main className='menu'>
-          <h2> Our Menu </h2>
-          <Pizza name='Spinach Pizza' ingredients='Tomato, mozarela, spinach and ricotta cheese' photoName='../public/pizza_images/spinaci.jpg' price={10.00} />
+    <main className="menu">
+      <h2> Our Menu </h2>
+      {numPizzas > 0 && (
+        <>
+          <p className="pizzas">
+            Authentic Italian cuisine, 6 creative dishes to choose from.All from
+            our stone oven, all organic, all delicious.
+          </p>
+          <ul className="pizzas">
+            {pizzas.map((pizza) => (
+              <Pizza pizzaObj={pizza} key={pizza.name} />
+            ))}
+          </ul>
+        </>
+      )}
     </main>
-  )
-}
+  );
+};
